@@ -1,5 +1,8 @@
 module ActiveModel::Associations
   module AssociationScopeExtension
+    # This gem currently still supports Rails 6 as-is because there is no definition change
+    # to add_constraints from 5.2.3 to 6.0.0. Refer to
+    # https://apidock.com/rails/v5.2.3/ActiveRecord/Associations/AssociationScope/add_constraints
     if ActiveRecord.version >= Gem::Version.new("5.2.0")
       def add_constraints(scope, owner, chain)
         chain_head = chain.first
